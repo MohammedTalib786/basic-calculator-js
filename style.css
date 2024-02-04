@@ -7,7 +7,6 @@
     --grey-btn: #A7A7A7;
     --black-clr: rgb(12, 12, 12);
     --white-clr: #fff;
-
 }
 
 * {
@@ -95,7 +94,7 @@ h1 {
 
 
 #zero {
-    width: 7rem;
+    width: 8rem;
     height: 3rem;
     border-radius: 35px;
 }
@@ -131,6 +130,6 @@ h1 {
     }
 
     .calci {
-        transform: scale(.6);
+        transform: scale(.65);
     }
 }

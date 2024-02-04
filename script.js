@@ -1,51 +1,26 @@
-let btn = document.querySelectorAll('button')
-let input = document.getElementById('input')
+let input = document.getElementById('input');
 
-// console.log(btn)
-// console.log(input)
+let sumOfAll = '';
+let zero;
 
-let btns = Array.from(btn)
-// console.log(btns)
-let str = ''
-let arr = []
+function appendChars(str) {
+    sumOfAll += str;
+    input.innerHTML = sumOfAll;
+}
 
-btns.forEach(elem => {
-    // console.log(elem)
-    elem.addEventListener('click', (e) => {
+function clearAll() {
+    sumOfAll = '';
+    zero = 0;
+    input.innerHTML = zero;
+}
 
-        // console.log(e.target.innerHTML)
-        try {
+function backSpace() {
+    sumOfAll = sumOfAll.slice(0, -1);
+    input.innerHTML = sumOfAll;
+}
 
-
-            if (e.target.innerHTML == 'AC') {
-                arr = [];
-                input.innerHTML = '';
-            }
-            else if (e.target.innerHTML == '=') {
-                // console.log(eval(str))
-                input.innerHTML = eval(str);
-            }
-            else if (e.target.innerHTML == 'back') {
-                arr.pop()
-                str = arr
-                input.innerHTML = str;
-                // console.log(arr)
-            }
-            // else if (e.target.innerHTML == '+') {
-            //     e.target.innerHTML = `<button disabled>+</button>`
-            // }
-            else {
-                arr.push(e.target.innerHTML)
-                // console.log(arr)
-                str = arr.join('')
-                // console.log(str)
-                input.innerHTML = str;
-            }
-        } catch (err) {
-            console.log(err.message);
-            input.innerHTML = 'Error';
-        }
-
-    })
-})
-
+function calculate() {
+    sumOfAll = eval(sumOfAll);
+    input.innerHTML = sumOfAll;
+    String(sumOfAll)
+}
