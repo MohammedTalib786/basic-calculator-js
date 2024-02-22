@@ -20,7 +20,12 @@ function backSpace() {
 }
 
 function calculate() {
-    sumOfAll = eval(sumOfAll);
-    input.innerHTML = sumOfAll;
-    String(sumOfAll)
+    try {
+        sumOfAll = eval(sumOfAll);
+        input.innerHTML = sumOfAll;
+        String(sumOfAll)
+    } catch (e) {
+        console.log(e.message)
+        input.innerHTML = 'Error';
+    }
 }
